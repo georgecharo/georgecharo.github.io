@@ -1,0 +1,437 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEORGE KARISA CHARO</title>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+emailjs.init("YOUR_PUBLIC_KEY");
+})();
+</script>
+
+<style>
+
+html{scroll-behavior:smooth;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background: linear-gradient(135deg, #0f172a, #1e293b);
+color:#fff;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:#0f172a;
+}
+
+.download-btn{
+background:linear-gradient(to right,#facc15,#f59e0b);
+padding:10px 20px;
+border-radius:10px;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+}
+
+.nav-links a{
+position:relative;
+margin:0 12px;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:3px;
+background:#facc15;
+transition:0.4s;
+}
+
+.nav-links a:hover{
+transform:translateY(-3px);
+color:#facc15;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* SECTION */
+section{
+padding:60px 5%;
+text-align:center;
+width:100%;
+}
+
+h2{
+color:#facc15;
+margin-bottom:20px;
+}
+
+/* PROFILE */
+.profile-img{
+width:100px;
+height:100px;
+border-radius:40%;
+margin-top:20px;
+border:4px solid #facc15;
+object-fit:cover;
+}
+
+/* ABOUT */
+.about{
+max-width:1100px;
+margin:auto;
+line-height:1.6;
+}
+
+/* CARDS */
+.card{
+background:#1e293b;
+padding:20px;
+margin:10px auto;
+max-width:1100px;
+border-radius:12px;
+}
+
+/* SKILLS */
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.skill{
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.skill:hover{
+transform:scale(1.1);
+background:#facc15;
+color:#000;
+}
+
+/* PROJECTS */
+.projects{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+max-width:1200px;
+margin:auto;
+}
+
+.project{
+background:#1e293b;
+width:300px;
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-15px) scale(1.05);
+background:#facc15;
+color:#000;
+}
+
+/* CONTACT */
+.contact-container{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+align-items:stretch;
+max-width:1200px;
+margin:auto;
+}
+
+.contact-card{
+background:#1e293b;
+width:450px;
+padding:20px;
+border-radius:15px;
+display:flex;
+flex-direction:column;
+text-align:left;
+}
+
+/* SEND MESSAGE CENTERED */
+.contact-card form{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.contact-card input,
+.contact-card textarea{
+width:100%;
+max-width:350px;
+margin:10px 0;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#0f172a;
+color:#fff;
+text-align:center;
+}
+
+.contact-card button{
+background:#facc15;
+border:none;
+padding:10px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+width:150px;
+}
+
+/* GOOGLE MAP */
+.location-section{
+padding:60px 5%;
+text-align:center;
+}
+
+.location-section p{
+margin-bottom:25px;
+line-height:1.6;
+}
+
+.map-container{
+max-width:1200px;
+margin:auto;
+overflow:hidden;
+border-radius:15px;
+}
+
+.map-container iframe{
+width:100%;
+height:400px;
+border:0;
+border-radius:15px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+font-family: 'Lobster', cursive;
+position:fixed;
+bottom:20px;
+right:-180px;
+background:#25D366;
+padding:12px 24px;
+border-radius:30px;
+color:#fff;
+text-decoration:none;
+font-size:15px;
+font-weight:500;
+display:flex;
+align-items:center;
+gap:8px;
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+animation:slideIn 1.5s forwards;
+transition:0.3s ease;
+z-index:1000;
+}
+
+.whatsapp:hover{
+transform:scale(1.05);
+background:#20bd5a;
+}
+
+@keyframes slideIn{
+to{
+right:20px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="cv.pdf" download class="download-btn">Download CV</a>
+
+<div class="nav-links">
+<a href="#home">HOME</a>
+<a href="#about">ABOUT ME</a>
+<a href="#education">EDUCATION</a>
+<a href="#certificates">CERTIFICATES</a>
+<a href="#skills">SKILLS</a>
+<a href="#projects">PROJECTS</a>
+<a href="#location">LOCATION</a>
+<a href="#contact">CONTACTS</a>
+</div>
+</nav>
+
+<section id="home">
+<h1>GEORGE KARISA CHARO</h1>
+<p>ICT Graduate | Software & Web Developer</p>
+<img src="profile.jpeg" class="profile-img">
+</section>
+
+<section id="about">
+<h2>ABOUT ME</h2>
+<p class="about">
+
+</p> I am an ICT graduate with a strong foundation in software and web development, passionate about creating modern, efficient, and user-friendly digital solutions. I have practical skills in developing websites and software applications, solving technical problems, and using technology to improve processes. I am eager to apply my skills, gain professional experience, and contribute positively to an organization while continuing to grow in the ICT field.
+
+</section>
+
+<section id="education">
+<h2>EDUCATION</h2>
+<div class="card">
+<h3>Diploma in ICT</h3>
+<p>Comprehensive training in information and communication technology, covering software development, web development, database management, networking, and practical problem-solving skills.
+.</p>
+</div>
+</section>
+
+<section id="certificates">
+<h2>CERTIFICATES</h2>
+<div class="card hidden">✔ Web Development</div>
+<div class="card hidden">✔ Computer Packages</div>
+<div class="card hidden">✔ Networking Fundamentals</div>
+</section>
+
+<section id="skills">
+<h2>SKILLS ATTAINED</h2>
+<div class="skills-grid">
+<div class="skill hidden">HTML</div>
+<div class="skill hidden">CSS</div>
+<div class="skill hidden">JavaScript</div>
+<div class="skill hidden">React Basics</div>
+<div class="skill hidden">Database Design</div>
+<div class="skill hidden">MySQL</div>
+<div class="skill hidden">Networking</div>
+<div class="skill hidden">System Analysis</div>
+<div class="skill hidden">Web Design</div>
+<div class="skill hidden">Git & GitHub</div>
+<div class="skill hidden">Microsoft Word</div>
+<div class="skill hidden">Excel</div>
+<div class="skill hidden">PowerPoint</div>
+<div class="skill hidden">Problem Solving</div>
+<div class="skill hidden">Communication</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>ACCOMPLISHED PROJECTS</h2>
+<div class="projects">
+<div class="project">
+<h3>Bus booking management information System</h3>
+<p>Transport management system.</p>
+</div>
+<div class="project">
+<h3>Online Counseling Management System</h3>
+<p>Student support platform.</p>
+</div>
+<div class="project">
+<h3>Music Website</h3>
+<p>Modern training website.</p>
+</div>
+</div>
+</section>
+
+<!-- GOOGLE MAP LOCATION -->
+<section id="location" class="location-section">
+<h2>MY LOCATION</h2>
+
+<p>
+I am located in Tezo, Kilifi County, near Bahari Primary School, Kenya.
+</p>
+
+<div class="map-container">
+<iframe
+src="https://www.google.com/maps?q=Bahari+Primary+School,+Tezo,+Kilifi+County,+Kenya&output=embed"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+</section>
+
+<section id="contact">
+<h2>CONTACTS</h2>
+
+<div class="contact-container">
+
+<div class="contact-card">
+<h3>CONTACT DETAILS</h3>
+<p>📞 +254 769312698//+254 701561065</p>
+<p>📧 georgekarisa841@gmail.com</p>
+<p>📍 KILIFI, KENYA</p>
+<p>📘 FACEBOOK: @ Pixel Prince</p>
+<p>📸 INSTAGRAM: @ code Master</p>
+</div>
+
+<div class="contact-card">
+<h3>SEND ME MESSAGE </h3>
+<form onsubmit="sendMail(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<textarea id="message" placeholder="Your Message" required></textarea>
+<button type="submit">SUBMIT</button>
+</form>
+</div>
+
+</div>
+</section>
+
+<a href="https://wa.me/254769312698" class="whatsapp">REACH ME ON WATSAPP</a>
+
+<script>
+function sendMail(e){
+e.preventDefault();
+
+var params = {
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+message: document.getElementById("message").value,
+};
+
+emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+.then(()=> alert("Message sent!"))
+.catch(()=> alert("Error sending message"));
+}
+
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
+```
